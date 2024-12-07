@@ -2,7 +2,7 @@ import streamlit as st
 from textblob import TextBlob
 
 # Streamlit app
-st.title("Sentiment Analysis App - Jay on 20241207, The day of Infamy")
+st.title("Sentiment Analysis App")
 
 # Check if the app is being accessed as an API
 api_call = st.experimental_get_query_params().get('api', [None])[0]
@@ -12,6 +12,8 @@ def get_sentiment_score(text):
     blob = TextBlob(text)
     sentiment_score = blob.sentiment.polarity
 
+# View sentiment scores below
+    
     if sentiment_score > 0:
         sentiment = "Positive"
     elif sentiment_score < 0:
